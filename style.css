@@ -1,0 +1,79 @@
+:root {
+    --cell-size: 50px;
+    --wall-color: #333;
+    --path-color: #f0f0f0;
+    --start-color: #00f;
+    --end-color: #f00;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1C1C1C;
+}
+
+#scene {
+    display: inline-flex;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 0;
+    width: 100%;
+    background-color: #1C1C1C;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: var(--cell-size);
+    }
+
+    .cell {
+        width: var(--cell-size);
+        height: var(--cell-size);
+        border: 1px solid #fff;
+        transition: background-color 0.3s;
+    }
+
+    .start {
+        background-color: var(--start-color);
+    }
+
+    .end {
+        background-color: var(--path-color);
+    }
+
+    .wall {
+        background-image: url("https://img.freepik.com/premium-vector/game-texture-stones-pebbles-rock-wall-seamless-pattern_9645-3682.jpg");
+        background-position: center;
+        background-size: 290%;
+        background-repeat: no-repeat;
+    }
+
+    .path {
+        background-color: var(--path-color);
+        background-position: center;
+        background-size: 290%;
+        background-repeat: no-repeat;
+    }
+
+    .treasure {
+        background-image: url("https://cdn.discordapp.com/emojis/410344239919267841.webp?size=96&animated=true");
+        background-position: center;
+        background-size: 65%;
+        background-repeat: no-repeat;
+    }
+
+    .player {
+        background-image: url("./assets/madeline.webp");
+        background-position: center;
+        background-size: 50%;
+        background-repeat: no-repeat;
+    }
+}
