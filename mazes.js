@@ -93,15 +93,17 @@ function playerMove(level, direction) {
         player.x = 0;
         player.y = 0;
         player.moves = 0;
-        alert(`Congratulations ${player.name}! You may now proceed to the next level`);
+
+        player.level === 4
+            ? alert(`Congratulations ${player.name}! You have completed all levels (there are easy 😒)`)
+            : alert(`Congratulations ${player.name}! You may now proceed to the next level`);
+
         const newLevel =
             player.level === 1
                 ? LEVEL_1
                 : player.level === 2
                     ? LEVEL_2
-                    : player.level === 3
-                        ? LEVEL_3
-                        : LEVEL_1;
+                    : LEVEL_3;
         drawLevelOnScreen(newLevel);
     } else {
         drawLevelOnScreen(level);
